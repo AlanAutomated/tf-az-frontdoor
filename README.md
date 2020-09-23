@@ -9,12 +9,15 @@ This example creates a DNS entry for http(s)://mfa.my.fqdn that when accessed re
 ````
 # Map of Frontdoor routes
 fd_routes = {
+
     # The name of an individual route
     mfa = {
         # Endpoints associated with the route. CNAME records will also be created.
         endpoints = ["mfa", "mfasetup" ]
+    
         # FQDN for the redirected host
         host      = "aka.ms"
+        
         # Path for the rediected host path
         path      = "/mfasetup"
     }
