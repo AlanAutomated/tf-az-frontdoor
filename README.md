@@ -1,6 +1,6 @@
 # Azure Frontdoor Terraform template
 
-This template creates an Azure Frontdoor and the associated Azure DNS records for a DNS-based URL redirection service. This is a cost effective and highly available alternative to using Traffic Manager and Functions or similar solutions combination of services.
+This template creates an Azure Frontdoor and the associated Azure DNS records for a DNS-based URL redirection service.
 
 
 ## Example Usage
