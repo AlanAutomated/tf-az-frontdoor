@@ -4,7 +4,7 @@ This template creates an Azure Frontdoor and the associated Azure DNS records fo
 
 
 ## Example Usage
-This example creates a DNS entry for http(s)://mfa.my.fqdn that when accessed redirects to http(s)://aka.ms/mfasetup.
+This example creates a DNS entry for http(s)://mfa.my.fqdn and http(s)://mfasetup.my.fqdn that when accessed redirects to http(s)://aka.ms/mfasetup.
 
 ````
 # Map of Frontdoor routes
