@@ -25,7 +25,7 @@ fd_routes = {
     # Name of the route
     mfa = {
         # Endpoints for DNS and front-end
-        endpoints = ["mfa", "mfasetup", "three"]
+        endpoints = ["mfa", "mfasetup"]
         # FQDN for the destination host name
         host      = "aka.ms"
         # Path on the destination host
