@@ -23,7 +23,14 @@ locals {
     ])
 }
 
-# The public IP isn't actually used as we are not serving content
+# Create the resource group for frontdoor
+resource azurerm_resource_group resource_group {
+  name     = var.fd_rg_name
+  location = var.fd_region
+}
+
+
+# Create a static public IP address
 resource azurerm_public_ip public_ip {
   name                                         = var.fd_pip_name
   location                                     = var.fd_region
