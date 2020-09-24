@@ -24,7 +24,7 @@ locals {
 }
 
 # Create the resource group for frontdoor
-resource azurerm_resource_group resource_group {
+resource azurerm_resource_group frontdoor_resource_group {
   name     = var.fd_rg_name
   location = var.fd_region
 }
@@ -36,7 +36,7 @@ resource azurerm_public_ip public_ip {
   location                                     = var.fd_region
   allocation_method                            = "Static"
 
-  resource_group_name                          = var.fd_rg_name
+  resource_group_name                          = azurerm_resource_group.frontdoor_resource_group.name
 }
 
 # CNAMEs records are used to provide compabibility for non-Azure apps; loop over Endpoints
@@ -56,7 +56,7 @@ resource azurerm_frontdoor frontdoor {
     name                                         = var.fd_name
     enforce_backend_pools_certificate_name_check = var.fd_cert_check
     
-    resource_group_name                          = var.fd_rg_name
+    resource_group_name                          = azurerm_resource_group.frontdoor_resource_group.name
 
     backend_pool_load_balancing {
         name                                     = var.fd_lb_name
