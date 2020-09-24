@@ -84,7 +84,7 @@ resource azurerm_frontdoor frontdoor {
         
         content {
             name                                 = frontend_endpoint.value
-            host_name                            = "${frontend_endpoint.value}.azurefd.net"
+            host_name                            = "${frontend_endpoint.value}.${var.dns_zone_name}"
         }
     }
 
